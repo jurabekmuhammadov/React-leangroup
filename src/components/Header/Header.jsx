@@ -1,64 +1,68 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 import logo from "../../assets/images/logo.svg";
 import "./MenuToggle.scss";
 import style from "./Header.module.scss";
 
 export class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      mode: true,
-    };
-  }
+  state = {
+    mode: true,
+    isOpen: false,
+  };
   render() {
     const themeMode = () => {
       document.body.classList.toggle("dark");
       this.setState({ mode: !this.state.mode });
     };
+    const toggle = () => {
+      this.setState({ isOpen: !this.state.isOpen });
+      console.log(this.state.isOpen);
+    };
     return (
       <header>
         <div className={`${style.header__container} container`}>
           <div className={style.logo}>
-            <a href="#">
+            <a href="najottalim.uz">
               <img src={logo} alt="brand-logo" />
             </a>
           </div>
-          <div className={style.menu}>
+          <div
+            className={`${style.menu} ${
+              this.state.isOpen ? "" : "navbar-close"
+            }`}
+          >
             <ul>
               <li className={style.menu_item}>
-                <a className={style.menu_link} href="#">
+                <a className={style.menu_link} href="najottalim.uz">
                   Продукция
                 </a>
               </li>
               <li className={style.menu_item}>
-                <a className={style.menu_link} href="#">
+                <a className={style.menu_link} href="najottalim.uz">
                   Сертификаты
                 </a>
               </li>
               <li className={style.menu_item}>
-                <a className={style.menu_link} href="#">
+                <a className={style.menu_link} href="najottalim.uz">
                   Наша команда
                 </a>
               </li>
               <li className={style.menu_item}>
-                <a className={style.menu_link} href="#">
+                <a className={style.menu_link} href="najottalim.uz">
                   О нас
                 </a>
               </li>
               <li className={style.menu_item}>
-                <a className={style.menu_link} href="#">
+                <a className={style.menu_link} href="najottalim.uz">
                   Новости
                 </a>
               </li>
               <li className={style.menu_item}>
-                <a className={style.menu_link} href="#">
+                <a className={style.menu_link} href="najottalim.uz">
                   Вакансии
                 </a>
               </li>
               <li className={style.menu_item}>
-                <a className={style.menu_link} href="#">
+                <a className={style.menu_link} href="najottalim.uz">
                   Контакты
                 </a>
               </li>
@@ -84,7 +88,7 @@ export class Header extends Component {
             </label>
           </div>
           <div className={style.burger}>
-            <button id={style.open_menu}>
+            <button id={style.open_menu} onClick={toggle}>
               <div id="menuToggle">
                 <input id="checkbox" type="checkbox"></input>
                 <label className="toggle" htmlFor="checkbox">
