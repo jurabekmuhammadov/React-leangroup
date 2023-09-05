@@ -36,20 +36,6 @@ header {
           }
         }
       }
-      #close_menu {
-        cursor: pointer;
-        border: none;
-        background-color: red;
-        padding: 2px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        svg {
-          width: 30px;
-          height: 30px;
-        }
-        display: none;
-      }
     }
     .mode {
       #modeBtn {
@@ -61,20 +47,14 @@ header {
       }
     }
     .burger {
-      #open_menu {
-        cursor: pointer;
-        border: none;
-        padding: 2px;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      svg {
-        width: 30px;
-        height: 30px;
-      }
+      // display: flex !important;
+      // align-items: center;
+      // justify-content: center;
       display: none;
+      #open_menu {
+        border: none;
+        background-color: transparent;
+      }
     }
     @media (max-width: 1200px) {
       gap: 0px;
@@ -102,7 +82,9 @@ header {
         transition: 0.4s;
       }
       .burger {
-        display: block;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
       }
       .logo {
         img {

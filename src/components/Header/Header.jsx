@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 import logo from "../../assets/images/logo.svg";
-import { FaBars, FaTimes } from "react-icons/fa";
+import "./MenuToggle.scss";
 import style from "./Header.module.scss";
 
 export class Header extends Component {
@@ -63,9 +63,6 @@ export class Header extends Component {
                 </a>
               </li>
             </ul>
-            <button id={style.close_menu}>
-              <FaTimes />
-            </button>
           </div>
           <div className={style.mode}>
             <label className="switch">
@@ -88,7 +85,14 @@ export class Header extends Component {
           </div>
           <div className={style.burger}>
             <button id={style.open_menu}>
-              <FaBars />
+              <div id="menuToggle">
+                <input id="checkbox" type="checkbox"></input>
+                <label class="toggle" for="checkbox">
+                  <div class="bar bar--top"></div>
+                  <div class="bar bar--middle"></div>
+                  <div class="bar bar--bottom"></div>
+                </label>
+              </div>
             </button>
           </div>
         </div>
