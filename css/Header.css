@@ -1,0 +1,14 @@
+header {
+  padding: 15px 0;
+  background-color: #ffffff;
+}
+header .header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+header .header__container .logo {
+  background-color: red;
+  padding: 10px;
+}

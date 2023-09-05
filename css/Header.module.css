@@ -1,0 +1,93 @@
+header {
+  padding: 15px 0;
+  background: #fff;
+  box-shadow: 0px 4px 32px 0px rgba(0, 16, 61, 0.16);
+}
+header .header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+header .header__container .menu ul {
+  display: flex;
+}
+header .header__container .menu ul .menu_item {
+  padding: 0 16px;
+  border-right: 2px solid rgba(0, 16, 61, 0.12);
+}
+header .header__container .menu ul .menu_item:last-child {
+  border-right: none;
+}
+header .header__container .menu ul .menu_item .menu_link {
+  color: #2c2d2e;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  transition: 0.3s;
+}
+header .header__container .menu ul .menu_item .menu_link:hover {
+  color: #ef7c00;
+}
+header .header__container .mode {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+header .header__container .mode span {
+  font-size: 16px;
+  color: #2c2d2e;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+header .header__container .mode .theme_mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header__container .mode .theme_mode .input {
+  visibility: hidden;
+}
+header .header__container .mode .theme_mode .label {
+  position: absolute;
+  background: rgb(146, 146, 159);
+  width: 48px;
+  height: 26px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+header .header__container .mode .theme_mode .circle {
+  position: absolute;
+  background: rgb(0, 0, 0);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  animation: toggleoff 0.3s linear forwards;
+}
+header .header__container .mode .theme_mode .input:checked + .label {
+  background-color: rgb(176, 176, 176);
+}
+header .header__container .mode .theme_mode .input:checked + .label .circle {
+  background-color: rgb(255, 255, 255);
+  animation: toggleon 0.3s linear forwards;
+}
+@keyframes toggleon {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(22px);
+  }
+}
+@keyframes toggleoff {
+  0% {
+    transform: translateX(22px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
